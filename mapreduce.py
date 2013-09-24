@@ -24,8 +24,11 @@ def reducefn(k, vs):
     return result
 
 try:
+  print "attempting to load previously calculated results"
   results = pickle.load( open("results.p", "rb") )
+  print "results.p loaded"
 except:
+  print "loading results.p failed - calculating"
   s = mincemeat.Server()
   
   s.datasource = dict(enumerate(data))
